@@ -1,0 +1,8 @@
+[package]
+edition = "2024"
+name = "app-plat-dyn"
+version = "0.1.0"
+
+[dependencies]
+axplat-aarch64-dyn = {path = "/home/zhourui/arceos/axplat_crates/platforms/axplat-aarch64-dyn"}
+axstd = {path = "/home/zhourui/arceos/arceos-plt-dyn/ulib/axstd"}
