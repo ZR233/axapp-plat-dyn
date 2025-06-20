@@ -1,5 +1,1 @@
-use std::path::PathBuf;
-
-fn main() {
-
-}
+fn main() {}
