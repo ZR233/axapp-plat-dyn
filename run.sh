@@ -1,0 +1,1 @@
+make  -C /home/zhourui/arceos/arceos-plt-dyn A=$(pwd) LOG=debug LD_SCRIPT=link.x PLAT_CONFIG=/home/zhourui/arceos/axplat_crates/platforms/axplat-aarch64-dyn/axconfig.toml SMP=2 MYPLAT=axplat-aarch64-dyn run

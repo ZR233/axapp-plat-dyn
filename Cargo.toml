@@ -5,4 +5,10 @@ version = "0.1.0"
 
 [dependencies]
 axplat-aarch64-dyn = {path = "/home/zhourui/arceos/axplat_crates/platforms/axplat-aarch64-dyn"}
-axstd = {path = "/home/zhourui/arceos/arceos-plt-dyn/ulib/axstd"}
+axstd = {path = "/home/zhourui/arceos/arceos-plt-dyn/ulib/axstd", features = ["alloc", "paging"]}
+
+[patch.crates-io]
+axplat = {path = "/home/zhourui/arceos/axplat_crates/axplat"}
+
+[patch.'https://github.com/arceos-org/axplat_crates.git']
+axplat = {path = "/home/zhourui/arceos/axplat_crates/axplat"}
