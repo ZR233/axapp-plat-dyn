@@ -12,6 +12,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "aarch64-cpu-ext"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f2a64358f36fba7d684ef367d38a17f6bd2316b97f0a2ad9eb3fe8cacbaed50a"
+dependencies = [
+ "aarch64-cpu",
+ "tock-registers 0.9.0",
+]
+
+[[package]]
 name = "addr2line"
 version = "0.24.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -194,7 +204,7 @@ dependencies = [
  "cfg-if",
  "kspin",
  "log",
- "memory_addr 0.4.0",
+ "memory_addr",
 ]
 
 [[package]]
@@ -228,9 +238,9 @@ dependencies = [
 
 [[package]]
 name = "axcpu"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "835db849dcf67c2e67fd8efb70351365d4268c37b12970ef4cf25bb1d4c12187"
+checksum = "21666fe462527cb76548c9f5b142dde90e09b065af63c515e726592d13ebda54"
 dependencies = [
  "aarch64-cpu",
  "cfg-if",
@@ -238,7 +248,7 @@ dependencies = [
  "linkme",
  "log",
  "loongArch64",
- "memory_addr 0.4.0",
+ "memory_addr",
  "page_table_entry",
  "page_table_multiarch",
  "percpu",
@@ -290,7 +300,7 @@ dependencies = [
  "lazyinit",
  "linkme",
  "log",
- "memory_addr 0.4.0",
+ "memory_addr",
  "page_table_multiarch",
  "percpu",
 ]
@@ -325,13 +335,15 @@ dependencies = [
  "kspin",
  "lazyinit",
  "log",
- "memory_addr 0.4.0",
+ "memory_addr",
  "memory_set",
 ]
 
 [[package]]
 name = "axplat"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c86cdb48cf1fbd432f4326ab0852b696ac49442b0ea0aed3401cb0bbe370a19f"
 dependencies = [
  "axplat-macros",
  "bitflags 2.9.1",
@@ -339,7 +351,7 @@ dependencies = [
  "crate_interface",
  "handler_table",
  "kspin",
- "memory_addr 0.4.0",
+ "memory_addr",
 ]
 
 [[package]]
@@ -347,6 +359,7 @@ name = "axplat-aarch64-dyn"
 version = "0.1.0"
 dependencies = [
  "aarch64-cpu",
+ "aarch64-cpu-ext",
  "any-uart",
  "axconfig-macros",
  "axcpu",
@@ -355,11 +368,16 @@ dependencies = [
  "heapless",
  "lazyinit",
  "log",
- "memory_addr 0.3.2",
+ "memory_addr",
+ "page_table_entry",
+ "page_table_multiarch",
+ "percpu",
  "pie-boot",
  "rdrive",
+ "serde",
  "smccc",
  "spin 0.10.0",
+ "toml",
 ]
 
 [[package]]
@@ -415,6 +433,8 @@ dependencies = [
 [[package]]
 name = "axplat-macros"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f90dfaee06a112fe4f810c60af1a86bc080af2172185b491cacc307b84dff748"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -511,7 +531,7 @@ dependencies = [
  "kspin",
  "lazyinit",
  "log",
- "memory_addr 0.4.0",
+ "memory_addr",
  "percpu",
  "scheduler",
  "timer_list",
@@ -1233,9 +1253,9 @@ dependencies = [
 
 [[package]]
 name = "hyper-util"
-version = "0.1.14"
+version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc2fdfdbff08affe55bb779f33b053aa1fe5dd5b54c257343c17edfa55711bdb"
+checksum = "7f66d5bd4c6f02bf0542fad85d626775bab9258cf795a4256dcaf3161114d1df"
 dependencies = [
  "base64 0.22.1",
  "bytes",
@@ -1449,9 +1469,9 @@ dependencies = [
 
 [[package]]
 name = "kdef-pgtable"
-version = "0.1.2"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e679d999335b7055935ae9cd13aac3116e54d5cfb127cb9b53791e08ef63306b"
+checksum = "fe55002bb265659921e59528cadf0d07362ebc0f37986d9b004bc45264036bf5"
 dependencies = [
  "bitflags 2.9.1",
  "prettyplease",
@@ -1573,12 +1593,6 @@ checksum = "32a282da65faaf38286cf3be983213fcf1d2e2a58700e808f83f4ea9a4804bc0"
 
 [[package]]
 name = "memory_addr"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5438b8df0f13e16e1f46140de247695a95952a5a4479e47197a8711bf1063373"
-
-[[package]]
-name = "memory_addr"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d4054cba279515fa87761b101d857333ce06391dbe8f18a11347204a7111416"
@@ -1589,7 +1603,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e7d47cbc25a4d00427f9070fd768eaf907f19c903fb72b547b19db2d56b9408e"
 dependencies = [
- "memory_addr 0.4.0",
+ "memory_addr",
 ]
 
 [[package]]
@@ -1765,7 +1779,7 @@ checksum = "ba811ef8ca8fb33d776e128624cb4fe25c9804cab96f83b822d4322431e6dd5a"
 dependencies = [
  "aarch64-cpu",
  "bitflags 2.9.1",
- "memory_addr 0.4.0",
+ "memory_addr",
  "x86_64 0.15.2",
 ]
 
@@ -1777,7 +1791,7 @@ checksum = "98cb76e21ce462270afd83b331599d5b83f876c2a98c0a70382b20d73e1da6be"
 dependencies = [
  "bitmaps",
  "log",
- "memory_addr 0.4.0",
+ "memory_addr",
  "page_table_entry",
  "riscv",
  "x86",
@@ -1820,10 +1834,12 @@ dependencies = [
 
 [[package]]
 name = "pie-boot"
-version = "0.2.12"
+version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a439b82a0aa449c7432084bb4adce199298cf13545873c2c196f6d9eff77165c"
+checksum = "af3a9eb101bc244ead6befeef29126479525a02a5c467b8461094964b8c7e945"
 dependencies = [
+ "aarch64-cpu",
+ "aarch64-cpu-ext",
  "bindeps-simple",
  "fdt-parser",
  "heapless",
@@ -1836,20 +1852,21 @@ dependencies = [
 
 [[package]]
 name = "pie-boot-if"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "04ba4eb3bbf609c19dbfa5c705f0b96bb189f5787301d772cd360578bd4ef97b"
+checksum = "c00af8d4efee0eee91ead95b34c50c067163dc4c90b874b1cc4caa671eb1d85b"
 dependencies = [
  "heapless",
 ]
 
 [[package]]
 name = "pie-boot-loader-aarch64"
-version = "0.1.19"
+version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e23c2c33ab533b93e194f3c1aaa34c1283f03e2b3f9fafe6ddf06c1c782e225d"
+checksum = "9ff1ed7dcbdb74f049cb423bf5c4a58c5bbd1794b8f6e2af566931ba7b9919ab"
 dependencies = [
  "aarch64-cpu",
+ "aarch64-cpu-ext",
  "any-uart",
  "bitflags 2.9.1",
  "fdt-parser",
@@ -1868,9 +1885,9 @@ dependencies = [
 
 [[package]]
 name = "pie-boot-macros"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8edae9253774c13d265b9134f596eb20734d321aa90d4e97b36d84485c4d5b3"
+checksum = "9402ab23e9e60727a37c831726126827f376de3e53478d3abc9adfbff4aa7ff3"
 dependencies = [
  "darling",
  "proc-macro2",
