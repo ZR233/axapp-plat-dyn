@@ -370,7 +370,6 @@ dependencies = [
  "log",
  "memory_addr",
  "page_table_entry",
- "page_table_multiarch",
  "percpu",
  "pie-boot",
  "rdrive",
@@ -1834,9 +1833,9 @@ dependencies = [
 
 [[package]]
 name = "pie-boot"
-version = "0.2.19"
+version = "0.2.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af3a9eb101bc244ead6befeef29126479525a02a5c467b8461094964b8c7e945"
+checksum = "524d0fc5cd834d2179d8a88cde327b0e168dd6aedf30ce1832467a924a35594f"
 dependencies = [
  "aarch64-cpu",
  "aarch64-cpu-ext",
@@ -1861,9 +1860,9 @@ dependencies = [
 
 [[package]]
 name = "pie-boot-loader-aarch64"
-version = "0.1.24"
+version = "0.1.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ff1ed7dcbdb74f049cb423bf5c4a58c5bbd1794b8f6e2af566931ba7b9919ab"
+checksum = "7dc57cd019b296478630e9e3bd62fcd462ece02611c8cee982f7f4f64ecf48d6"
 dependencies = [
  "aarch64-cpu",
  "aarch64-cpu-ext",
