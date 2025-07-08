@@ -126,6 +126,7 @@ dependencies = [
 [[package]]
 name = "arceos_api"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axalloc",
  "axconfig",
@@ -198,6 +199,7 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 [[package]]
 name = "axalloc"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "allocator",
  "axerrno",
@@ -210,6 +212,7 @@ dependencies = [
 [[package]]
 name = "axconfig"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axconfig-macros",
 ]
@@ -271,6 +274,7 @@ dependencies = [
 [[package]]
 name = "axfeat"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axalloc",
  "axhal",
@@ -283,6 +287,7 @@ dependencies = [
 [[package]]
 name = "axhal"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "aarch64-cpu",
  "axalloc",
@@ -317,6 +322,7 @@ dependencies = [
 [[package]]
 name = "axlog"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "cfg-if",
  "crate_interface",
@@ -327,6 +333,7 @@ dependencies = [
 [[package]]
 name = "axmm"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axalloc",
  "axconfig",
@@ -357,6 +364,7 @@ dependencies = [
 [[package]]
 name = "axplat-aarch64-dyn"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/axplat-aarch64-dyn#141aa634467891026949f93985a70c36248ac6ea"
 dependencies = [
  "aarch64-cpu",
  "aarch64-cpu-ext",
@@ -481,6 +489,7 @@ dependencies = [
 [[package]]
 name = "axruntime"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axalloc",
  "axconfig",
@@ -499,6 +508,7 @@ dependencies = [
 [[package]]
 name = "axstd"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "arceos_api",
  "axerrno",
@@ -511,6 +521,7 @@ dependencies = [
 [[package]]
 name = "axsync"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axtask",
  "kspin",
@@ -520,6 +531,7 @@ dependencies = [
 [[package]]
 name = "axtask"
 version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/arceos.git?branch=dev-dyn-driver#40fbaa105b563c063027246af25068599759f5ec"
 dependencies = [
  "axconfig",
  "axhal",

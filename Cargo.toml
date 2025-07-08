@@ -4,7 +4,8 @@ name = "app-plat-dyn"
 version = "0.1.0"
 
 [dependencies]
-axplat-aarch64-dyn = {path = "/home/zhourui/arceos/axplat-aarch64-dyn", features = ["irq", "smp", "hv"]}
-axstd = {path = "/home/zhourui/arceos/arceos-plt-dyn/ulib/axstd", features = ["alloc", "paging", "irq", "multitask", "page-alloc-4g"]}
+# axplat-aarch64-dyn = {path = "/home/zhourui/arceos/axplat-aarch64-dyn", features = ["irq", "smp", "hv"]}
+# axstd = {path = "/home/zhourui/arceos/arceos-plt-dyn/ulib/axstd", features = ["alloc", "paging", "irq", "multitask", "page-alloc-4g"]}
 
-
+axplat-aarch64-dyn = {git = "https://github.com/arceos-hypervisor/axplat-aarch64-dyn", features = ["irq", "smp", "hv"]}
+axstd = {git = "https://github.com/arceos-hypervisor/arceos.git", branch = "dev-dyn-driver", features = ["alloc", "paging", "irq", "multitask", "page-alloc-4g"]}
