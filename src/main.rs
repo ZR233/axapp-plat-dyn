@@ -14,6 +14,15 @@ const NUM_TIMES: usize = 100;
 
 use std::os::arceos::modules::axhal;
 
+#[unsafe(no_mangle)]
+fn main() {
+    println!("Hello, world!");
+    test_yielding();
+    test_sleep();
+    test_wait_queue();
+    println!("All IRQ state tests run OK!");
+}
+
 pub fn assert_irq_enabled() {
     assert!(
         axhal::asm::irqs_enabled(),
@@ -155,11 +164,4 @@ fn test_wait_queue() {
 
     println!("IRQ state tests on task wait run OK!");
 }
-#[unsafe(no_mangle)]
-fn main() {
-    println!("Hello, world!");
-    test_yielding();
-    test_sleep();
-    test_wait_queue();
-    println!("All IRQ state tests run OK!");
-}
+
